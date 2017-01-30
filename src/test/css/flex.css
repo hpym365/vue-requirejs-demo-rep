@@ -1,0 +1,82 @@
+.ff-lay {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+}
+.ff-v {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.ff-h {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+[class|=lay-col],
+[class|=lay-row] {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  min-height: 30px;
+  min-width: 30px;
+}
+.ff-lock {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+.ff-unlock {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+.ff-lock-max {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+.ff-lock-min {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+}
+.ff-roll-auto {
+  overflow: auto;
+}
+.ff-roll-x {
+  overflow-x: auto;
+}
+.ff-roll-y {
+  overflow-y: auto;
+}
+.ff-mr10 {
+  padding: 10px;
+}
+.ff-pd10 {
+  padding: 10px;
+}
+.ff-bgc1 {
+  background: #eae7c4;
+}
+.ff-br1 div {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+.ff-br1 div:first-child {
+  border-right: 0px;
+}
+.ff-sd1 {
+  box-shadow: 2px 0px 2px rgba(51, 51, 51, 0.3) inset;
+}
