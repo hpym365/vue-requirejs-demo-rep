@@ -1,39 +1,61 @@
 define(['app', 'vue'], function (app, Vue) {
-  function button(div, optionsdata) {
+  var options = {}
 
-    div.append('<btncom :options="options"></btncom>')
-    var btncom = app.scom.Button
+  function button(div, optionsdata, optname) {
 
-    var btnvue = new Vue({
-      data: {
-        options: optionsdata
-      },
-      el: div[0],
-      components: {btncom}
-    })
-
-    return btnvue
+    setData(optionsdata, optname)
+    var btndiv = '<btncom :options="options.' + optname + '"></btncom>'
+    console.log(btndiv)
+    div.append(btndiv)
+    $('#showdiv').empty()
+    $('#showdiv').append(div)
+    instanceVue()
+    return div
   }
 
-  function generateCom(optionsdata, optname) {
-    var indexvue = instanceVue()
-    indexvue.$set(indexvue.$data,optname,optionsdata)
-    return indexvue
+  function setData(optionsdata, optname) {
+    //  var indexvue = instanceVue()
+    Vue.set(options,optname,optionsdata)//options[optname] = optionsdata
+    //indexvue.$set(indexvue.$data.options,optname,optionsdata)
+    return options
   }
 
   function instanceVue() {
-    if (window.IndexVue === undefined) {
+    debugger
+    if(window.IndexVue==='weundefined'){
+      debugger
+      window.IndexVue._init(window.IndexVue.$options);
+      window.IndexVue.$forceUpdate()
+    }else{
+      var btncom = app.scom.Button
+      //  window.IndexVue.$destroy()
+      //   window.IndexVue.$forceUpdate()
+      //   console.log(window.IndexVue)
+      if (window.IndexVue != undefined){
+        window.IndexVue.$destroy()
+      }
       window.IndexVue = new Vue({
         el: '#demo',
         data: {
-          options:{'df':'123'},
-          df: '123'
+          options: options
+        },
+        components: {btncom},
+        destroyed () {
+          console.log('destroyed')
+        },
+        beforeMount () {
+          debugger
+          console.log('before mounted')
+        },
+        mounted () {
+          console.log('mounted')
         }
       })
     }
+
     return window.IndexVue
   }
 
-  return {button, generateCom}
+  return {button, instanceVue}
 
 })

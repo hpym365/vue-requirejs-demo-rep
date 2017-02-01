@@ -2438,6 +2438,7 @@ function lifecycleMixin (Vue) {
     el,
     hydrating
   ) {
+    debugger
     var vm = this;
     vm.$el = el;
     if (!vm.$options.render) {
