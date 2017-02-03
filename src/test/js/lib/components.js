@@ -15,6 +15,7 @@ define(['app', 'vue'], function (app, Vue) {
 
   function setData(optionsdata, optname) {
     //  var indexvue = instanceVue()
+    //change new vue options
     Vue.set(options,optname,optionsdata)//options[optname] = optionsdata
     //indexvue.$set(indexvue.$data.options,optname,optionsdata)
     return options
