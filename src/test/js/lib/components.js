@@ -1,16 +1,26 @@
 define(['app', 'vue'], function (app, Vue) {
   var options = {}
 
-  function button(div, optionsdata, optname) {
+  function button(div, optionsdata) {
 
-    setData(optionsdata, optname)
-    var btndiv = '<btncom :options="options.' + optname + '"></btncom>'
-    console.log(btndiv)
-    div.append(btndiv)
-    $('#showdiv').empty()
-    $('#showdiv').append(div)
-    instanceVue()
-    return div
+    var btncom = app.scom.Button
+    debugger
+
+    var target = Vue.extend({
+      extends: btncom,
+      methods: {
+        setname: function (value) {
+          res.$set(res.options,'btn',value)
+        }
+      }
+    })
+
+
+    div.append('<div id="targetdiv"></div>')
+    var res = new target()
+    res.$set(res,'options',optionsdata)
+    res.$mount('#targetdiv')
+    return res
   }
 
   function setData(optionsdata, optname) {
@@ -21,37 +31,14 @@ define(['app', 'vue'], function (app, Vue) {
   }
 
   function instanceVue() {
-    debugger
-    if(window.IndexVue==='weundefined'){
-      debugger
-      window.IndexVue._init(window.IndexVue.$options);
-      window.IndexVue.$forceUpdate()
-    }else{
+
       var btncom = app.scom.Button
-      //  window.IndexVue.$destroy()
-      //   window.IndexVue.$forceUpdate()
-      //   console.log(window.IndexVue)
-      if (window.IndexVue != undefined){
-        window.IndexVue.$destroy()
-      }
+
       window.IndexVue = new Vue({
         el: '#demo',
-        data: {
-          options: options
-        },
-        components: {btncom},
-        destroyed () {
-          console.log('destroyed')
-        },
-        beforeMount () {
-          debugger
-          console.log('before mounted')
-        },
-        mounted () {
-          console.log('mounted')
-        }
+        components: {btncom}
       })
-    }
+
 
     return window.IndexVue
   }

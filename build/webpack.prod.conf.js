@@ -18,7 +18,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     filename: utils.assetsPath('js/[name].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js'),
     libraryTarget: 'umd',
-    library: 'senyint',
+    library: '[name]',
     umdNamedDefine: true
   },
   externals: {
