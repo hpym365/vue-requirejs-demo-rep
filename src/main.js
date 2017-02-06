@@ -3,10 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import Button from './components/Button'
+import Div from './components/Div'
 // import Hello from 'components/Hello.vue'
 
 export const scom = {
-  Button
+  Button, Div
 }
 export default {
   'name': 'zx'

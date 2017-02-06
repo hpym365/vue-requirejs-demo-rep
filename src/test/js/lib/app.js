@@ -2,49 +2,49 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("vue"));
 	else if(typeof define === 'function' && define.amd)
-		define(["vue"], factory);
+		define("app", ["vue"], factory);
 	else if(typeof exports === 'object')
-		exports["senyint"] = factory(require("vue"));
+		exports["app"] = factory(require("vue"));
 	else
-		root["senyint"] = factory(root["Vue"]);
+		root["app"] = factory(root["Vue"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_14__) {
-return webpackJsonpsenyint([1,0],[
+return webpackJsonp_name_([1,0],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-
+	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	exports.scom = undefined;
-
+	
 	var _vue = __webpack_require__(14);
-
+	
 	var _vue2 = _interopRequireDefault(_vue);
-
+	
 	var _App = __webpack_require__(8);
-
+	
 	var _App2 = _interopRequireDefault(_App);
-
+	
 	var _Button = __webpack_require__(9);
-
+	
 	var _Button2 = _interopRequireDefault(_Button);
-
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	
 	var scom = exports.scom = {
 	  Button: _Button2.default
 	};
 	exports.default = {
 	  'name': 'zx'
 	};
-
+	
 	exports.testexports = {
 	  'testexports': 'ls'
 	};
 	console.log('export finished');
-
+	
 	new _vue2.default({
 	  el: '#app',
 	  template: '<App/>',
@@ -57,17 +57,17 @@ return webpackJsonpsenyint([1,0],[
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-
+	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
+	
 	var _Hello = __webpack_require__(10);
-
+	
 	var _Hello2 = _interopRequireDefault(_Hello);
-
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	
 	exports.default = {
 	  name: 'app',
 	  components: {
@@ -80,7 +80,7 @@ return webpackJsonpsenyint([1,0],[
 /***/ function(module, exports) {
 
 	'use strict';
-
+	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
@@ -88,7 +88,7 @@ return webpackJsonpsenyint([1,0],[
 	  data: function data() {
 	    return { btndom: {} };
 	  },
-
+	
 	  props: {
 	    options: {
 	      type: Object,
@@ -112,7 +112,7 @@ return webpackJsonpsenyint([1,0],[
 /***/ function(module, exports) {
 
 	'use strict';
-
+	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
@@ -147,21 +147,21 @@ return webpackJsonpsenyint([1,0],[
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-
+	
 	/* styles */
-	__webpack_require__(5)
-
+	__webpack_require__(6)
+	
 	var Component = __webpack_require__(1)(
 	  /* script */
 	  __webpack_require__(2),
 	  /* template */
-	  __webpack_require__(11),
+	  __webpack_require__(13),
 	  /* scopeId */
 	  null,
 	  /* cssModules */
 	  null
 	)
-
+	
 	module.exports = Component.exports
 
 
@@ -173,13 +173,13 @@ return webpackJsonpsenyint([1,0],[
 	  /* script */
 	  __webpack_require__(3),
 	  /* template */
-	  __webpack_require__(12),
+	  __webpack_require__(11),
 	  /* scopeId */
 	  null,
 	  /* cssModules */
 	  null
 	)
-
+	
 	module.exports = Component.exports
 
 
@@ -187,42 +187,26 @@ return webpackJsonpsenyint([1,0],[
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-
+	
 	/* styles */
-	__webpack_require__(6)
-
+	__webpack_require__(5)
+	
 	var Component = __webpack_require__(1)(
 	  /* script */
 	  __webpack_require__(4),
 	  /* template */
-	  __webpack_require__(13),
+	  __webpack_require__(12),
 	  /* scopeId */
-	  "data-v-4aa85da8",
+	  "data-v-5a33df66",
 	  /* cssModules */
 	  null
 	)
-
+	
 	module.exports = Component.exports
 
 
 /***/ },
 /* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    attrs: {
-	      "id": "app"
-	    }
-	  }, [_c('img', {
-	    attrs: {
-	      "src": __webpack_require__(7)
-	    }
-	  }), _vm._v(" "), _c('hello')], 1)
-	},staticRenderFns: []}
-
-/***/ },
-/* 12 */
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -234,7 +218,7 @@ return webpackJsonpsenyint([1,0],[
 	},staticRenderFns: []}
 
 /***/ },
-/* 13 */
+/* 12 */
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -291,6 +275,22 @@ return webpackJsonpsenyint([1,0],[
 	    }
 	  }, [_vm._v("awesome-vue")])])])
 	}]}
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    attrs: {
+	      "id": "app"
+	    }
+	  }, [_c('img', {
+	    attrs: {
+	      "src": __webpack_require__(7)
+	    }
+	  }), _vm._v(" "), _c('hello')], 1)
+	},staticRenderFns: []}
 
 /***/ },
 /* 14 */

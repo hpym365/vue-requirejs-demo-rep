@@ -1,7 +1,8 @@
 requirejs.config({
   baseUrl: 'js/lib',
   paths: {
-    module: '../modules'
+    module: '../modules',
+    app: 'http://localhost:8080/app'
   },
   shim: {
     app: {

@@ -1,62 +1,71 @@
 define(['app', 'vue'], function (app, Vue) {
   var options = {}
 
-  function button(div, optionsdata, optname) {
+  function button(div, optionsdata) {
 
-    setData(optionsdata, optname)
-    var btndiv = '<btncom :options="options.' + optname + '"></btncom>'
-    console.log(btndiv)
-    div.append(btndiv)
-    $('#showdiv').empty()
-    $('#showdiv').append(div)
-    instanceVue()
-    return div
+    var ybutton = app.scom.Button
+    debugger
+
+    var target = Vue.extend({
+      extends: ybutton,
+      methods: {
+        setname: function (value) {
+          res.$set(res.options, 'btn', value)
+        }
+      }
+    })
+
+
+    div.append('<div id="targetdiv"></div>')
+    var res = new target()
+    res.$set(res, 'options', optionsdata)
+    res.$mount('#targetdiv')
+    return res
+  }
+
+  function div(div, optionsdata) {
+
+    var ydiv = app.scom.Div
+    debugger
+
+    var target = Vue.extend({
+      extends: ydiv,
+      methods: {
+        setname: function (value) {
+          res.$set(res.options, 'btn', value)
+        }
+      }
+    })
+
+
+    div.append('<div id="targetdiv"></div>')
+    var res = new target()
+    res.$set(res, 'options', optionsdata)
+    res.$mount('#targetdiv')
+    return res
   }
 
   function setData(optionsdata, optname) {
     //  var indexvue = instanceVue()
-    //change new vue options
-    Vue.set(options,optname,optionsdata)//options[optname] = optionsdata
+    Vue.set(options, optname, optionsdata)//options[optname] = optionsdata
     //indexvue.$set(indexvue.$data.options,optname,optionsdata)
     return options
   }
 
   function instanceVue() {
-    debugger
-    if(window.IndexVue==='weundefined'){
-      debugger
-      window.IndexVue._init(window.IndexVue.$options);
-      window.IndexVue.$forceUpdate()
-    }else{
-      var btncom = app.scom.Button
-      //  window.IndexVue.$destroy()
-      //   window.IndexVue.$forceUpdate()
-      //   console.log(window.IndexVue)
-      if (window.IndexVue != undefined){
-        window.IndexVue.$destroy()
-      }
-      window.IndexVue = new Vue({
-        el: '#demo',
-        data: {
-          options: options
-        },
-        components: {btncom},
-        destroyed () {
-          console.log('destroyed')
-        },
-        beforeMount () {
-          debugger
-          console.log('before mounted')
-        },
-        mounted () {
-          console.log('mounted')
-        }
-      })
-    }
+
+    var ybutton = app.scom.Button
+    var ydiv = app.scom.Div
+
+    window.IndexVue = new Vue({
+      el: 'body',
+      components: {ybutton, ydiv}
+    })
+
 
     return window.IndexVue
   }
 
-  return {button, instanceVue}
+  return {button, instanceVue, div}
 
 })
