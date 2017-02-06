@@ -14,7 +14,6 @@
  * MIT LICENSE
  *
  */
-
 var dloc = document.location;
 
 function dlocHashEmpty() {
@@ -178,6 +177,7 @@ var Router = exports.Router = function (routes) {
 };
 
 Router.prototype.init = function (r) {
+  debugger
   var self = this
     , routeTo;
   this.handler = function(onChangeEvent) {
@@ -460,6 +460,7 @@ Router.prototype.path = function(path, routesFn) {
 };
 
 Router.prototype.dispatch = function(method, path, callback) {
+  debugger
   var self = this, fns = this.traverse(method, path.replace(QUERY_SEPARATOR, ""), this.routes, ""), invoked = this._invoked, after;
   this._invoked = true;
   if (!fns || fns.length === 0) {

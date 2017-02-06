@@ -1,7 +1,8 @@
 
-page.base('/server');
+page.base('/vue-requirejs-demo/src/test/server');
 page('/', index)
 page('/contact', contact)
+page('/home', index)
 page({ dispatch: false })
 
 function index() {
@@ -10,6 +11,7 @@ function index() {
 }
 
 function contact() {
+
   document.querySelector('p')
     .textContent = 'Contact page generated on the client!';
 }

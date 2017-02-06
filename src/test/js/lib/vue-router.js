@@ -188,6 +188,7 @@ function createRoute (
   location,
   redirectedFrom
 ) {
+  debugger
   var route = {
     name: location.name || (record && record.name),
     meta: (record && record.meta) || {},

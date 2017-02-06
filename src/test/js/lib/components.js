@@ -4,7 +4,6 @@ define(['app', 'vue'], function (app, Vue) {
   function button(div, optionsdata) {
 
     var ybutton = app.scom.Button
-    debugger
 
     var target = Vue.extend({
       extends: ybutton,
@@ -26,7 +25,6 @@ define(['app', 'vue'], function (app, Vue) {
   function div(div, optionsdata) {
 
     var ydiv = app.scom.Div
-    debugger
 
     var target = Vue.extend({
       extends: ydiv,

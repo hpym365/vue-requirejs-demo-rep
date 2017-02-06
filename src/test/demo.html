@@ -15,9 +15,16 @@
   </div>
   <div class="lay-col-2 ff-lay">
     <div id="menudiv" class="lay-row-1 ff-lock" style="width: 202px;">
+      <ul>
+        <li><a href="#/test">#/test</a></li>
+        <li><a href="#/demo">#/demo</a></li>
+      </ul>
     </div>
-    <div id="showdiv" class="lay-row-2 actived">
-      这是进来时候默认的首页.
+    <div class="lay-row-2 actived">
+
+      <router-view></router-view>
+      <div id="showdiv" >
+      </div>
     </div>
   </div>
 </div>

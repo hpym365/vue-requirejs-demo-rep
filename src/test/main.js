@@ -14,5 +14,5 @@ requirejs.config({
   }
 })
 
-requirejs(['module/demo'], function () {
+requirejs(['module/route'], function () {
 })

@@ -54,8 +54,8 @@ app.get('/', function(req, res){
  * GET /:example -> /:example/
  */
 
-app.get('/:example', function(req, res){
-  res.redirect('/' + req.params.example + '/');
+app.get('/:test', function(req, res){
+  res.redirect('/' + req.params.test + '/');
 });
 
 /**
@@ -65,7 +65,7 @@ app.get('/:example', function(req, res){
 app.get('/:example/:file(*)', function(req, res, next){
   var file = req.params.file;
   if (!file) return next();
-  var name = req.params.example;
+  var name = req.params.test;
   var path = join(__dirname, name, file);
   fs.stat(path, function(err, stat){
     if (err) return next();
@@ -78,8 +78,8 @@ app.get('/:example/:file(*)', function(req, res, next){
  */
 
 app.get('/:example/*', function(req, res){
-  var name = req.params.example;
-  res.sendFile(join(__dirname, name, 'index.html'));
+  var name = req.params.test;
+  res.sendFile(join(__dirname, name, 'demo.html'));
 });
 
 app.listen(4001);
