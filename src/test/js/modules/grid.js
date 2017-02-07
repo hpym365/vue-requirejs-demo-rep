@@ -19,14 +19,31 @@ define(['jquery', 'components'], function ($, com) {
           if (shuju[ziduan.col] === '张三') {
             return '<h1>这是张三啊</h1>'
           } else {
-          //  var div = $('<button @click="options.clickevent">' + shuju[ziduan.col] + '</button>')
+            //  var div = $('<button @click="options.clickevent">' + shuju[ziduan.col] + '</button>')
             return '<button>' + shuju[ziduan.col] + this + '</button>'
           }
         }
         return null
       },
       clickevent: function () {
-        window.alert('else的点击事件')
+        window.alert('张三的点击事件')
+      },
+      clickevent1: function () {
+        window.alert('其他人的点击事件')
+      },
+      domfun: function (el, fields, datalist) {
+        debugger
+        if (fields.col === 'name') {
+          if (datalist[fields.col] === '张三') {
+            el.innerHTML = '<h1>张三啊</h1>'
+            el.addEventListener('click', this.clickevent)
+          }
+          else {
+            el.innerHTML = '<button>' + datalist[fields.col] + '</button>'
+            el.addEventListener('click', this.clickevent1)
+          }
+        }
+        return el
       }
 
     }
