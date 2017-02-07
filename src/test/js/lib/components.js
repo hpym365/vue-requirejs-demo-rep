@@ -1,6 +1,23 @@
 define(['app', 'vue'], function (app, Vue) {
   var options = {}
 
+  function grid(div, optionsdata) {
+
+    var ygrid = app.scom.Grid
+
+    var target = Vue.extend({
+      extends: ygrid,
+      methods: {}
+    })
+
+
+    div.append('<div id="targetdiv"></div>')
+    var res = new target()
+    res.$set(res, 'options', optionsdata)
+    res.$mount('#targetdiv')
+    return res
+  }
+
   function button(div, optionsdata) {
 
     var ybutton = app.scom.Button
@@ -64,6 +81,6 @@ define(['app', 'vue'], function (app, Vue) {
     return window.IndexVue
   }
 
-  return {button, instanceVue, div}
+  return {button, instanceVue, div, grid}
 
 })

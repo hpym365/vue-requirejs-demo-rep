@@ -14,5 +14,6 @@ requirejs.config({
   }
 })
 
-requirejs(['module/route'], function () {
+requirejs(['module/route','jquery'], function (route,$) {
+
 })

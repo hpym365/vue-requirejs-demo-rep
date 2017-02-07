@@ -4,10 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import Button from './components/Button'
 import Div from './components/Div'
-// import Hello from 'components/Hello.vue'
+import Grid from 'components/Grid.vue'
 
 export const scom = {
-  Button, Div
+  Button, Div, Grid
 }
 export default {
   'name': 'zx'

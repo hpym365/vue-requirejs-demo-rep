@@ -177,10 +177,11 @@ var Router = exports.Router = function (routes) {
 };
 
 Router.prototype.init = function (r) {
-  debugger
+
   var self = this
     , routeTo;
   this.handler = function(onChangeEvent) {
+    debugger
     var newURL = onChangeEvent && onChangeEvent.newURL || window.location.hash;
     var url = self.history === true ? self.getPath() : newURL.replace(/.*#/, '');
     self.dispatch('on', url.charAt(0) === '/' ? url : '/' + url);
@@ -460,7 +461,7 @@ Router.prototype.path = function(path, routesFn) {
 };
 
 Router.prototype.dispatch = function(method, path, callback) {
-  debugger
+  //debugger
   var self = this, fns = this.traverse(method, path.replace(QUERY_SEPARATOR, ""), this.routes, ""), invoked = this._invoked, after;
   this._invoked = true;
   if (!fns || fns.length === 0) {
