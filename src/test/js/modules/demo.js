@@ -30,6 +30,89 @@ define(['components', 'jquery'], function (com, $) {
       }
     }
     com.button($('#vueshowdiv'), optionsdata2)
+
+    var optionsdata3 = {
+      btn: '点我执行showButtonDemoDynamic',
+      funclick: function () {
+        showButtonDemoDynamic()
+      }
+    }
+    com.button($('#vueshowdiv'), optionsdata3)
+
+    var optionsdata4 = {
+      btn: '点我执行showButtonDisplay',
+      funclick: function () {
+        showButtonDisplay()
+      }
+    }
+    com.button($('#vueshowdiv'), optionsdata4)
+  }
+
+
+  function showButtonDemoDynamic(){
+
+    var dyyl
+    var optionsdata1 = {
+      btn: '打印按钮',
+      funclick: function () {
+        window.alert('点我可以打印了')
+      }
+    }
+
+    var print = com.button($('#dy'), optionsdata1)
+
+    var optionsdata2 = {
+      btn: '↓',
+      funclick: function () {
+        window.alert('点我显示打印预览')
+        if(dyyl===undefined || dyyl===null){
+          var optionsdata3 = {
+            btn: '打印预览',
+            funclick: function () {
+              window.alert('点我可以打印预览')
+            }
+          }
+          dyyl=com.button($('#dyyl'), optionsdata3)
+        }else{
+          $('#dyyl').empty()
+          dyyl=null
+          //按钮对象销毁
+        }
+      }
+    }
+    var jt = com.button($('#dy'), optionsdata2)
+  }
+
+
+  function showButtonDisplay(){
+
+    var optionsdata1 = {
+      btn: '打印按钮',
+      funclick: function () {
+        window.alert('点我可以打印了')
+      }
+    }
+
+    var print = com.button($('#dy'), optionsdata1)
+
+    var optionsdata2 = {
+      btn: '↓',
+      funclick: function () {
+        window.alert('点我显示打印预览')
+        dyyl.setdisplay(dyyl.options.isdisplay==='none'?'block':'none')
+        console.log(dyyl.options.isdisplay)
+      }
+    }
+    var jt = com.button($('#dy'), optionsdata2)
+
+    var optionsdata3 = {
+      btn: '打印预览',
+      funclick: function () {
+        window.alert('点我可以打印预览')
+      },
+      isdisplay: 'none'
+    }
+    var dyyl=com.button($('#dyyl'), optionsdata3)
   }
 
   return {init}

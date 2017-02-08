@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <button @click="options.funclick">{{options.btn}}</button>
-  </div>
+    <button @click="options.funclick" @mouseover="options.mouseover"
+            :style="{display: options.isdisplay}">{{options.btn}}</button>
 </template>
 
 <script>
@@ -16,7 +15,8 @@
           btn: '按钮',
           funclick: function () {
             window.alert('按钮默认点击事件')
-          }
+          },
+          isdisplay: 'block'
         }
       }
     },

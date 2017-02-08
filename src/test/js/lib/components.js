@@ -27,6 +27,9 @@ define(['app', 'vue'], function (app, Vue) {
       methods: {
         setname: function (value) {
           res.$set(res.options, 'btn', value)
+        },
+        setdisplay: function (value) {
+          res.$set(res.options, 'isdisplay', value)
         }
       }
     })
