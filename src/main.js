@@ -6,6 +6,10 @@ import Button from './components/Button'
 import Div from './components/Div'
 import Grid from 'components/Grid.vue'
 
+require('./test/css/basic.css')
+require('./test/css/button.css')
+require('./test/css/democss.css')
+
 export const scom = {
   Button, Div, Grid
 }

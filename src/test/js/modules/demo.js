@@ -1,17 +1,17 @@
 define(['components', 'jquery'], function (com, $) {
   console.log('demo js execute')
- // com.instanceVue()
+  // com.instanceVue()
 
   function init() {
     $('#showdiv').empty()
-    var ydiv = com.div($('#showdiv'), {options:{message:'123'}})
+    var ydiv = com.div($('#showdiv'), {options: {message: '123'}})
 
     var btn3
     var optionsdata1 = {
       btn: '按钮1',
       funclick: function () {
         window.alert('我是按钮1')
-        if(btn3!== undefined){
+        if (btn3 !== undefined) {
           $.ajax('test').then(function (json) {
             btn3.setname(json.data.btn)
           })
@@ -49,7 +49,7 @@ define(['components', 'jquery'], function (com, $) {
   }
 
 
-  function showButtonDemoDynamic(){
+  function showButtonDemoDynamic() {
 
     var dyyl
     var optionsdata1 = {
@@ -65,17 +65,18 @@ define(['components', 'jquery'], function (com, $) {
       btn: '↓',
       funclick: function () {
         window.alert('点我显示打印预览')
-        if(dyyl===undefined || dyyl===null){
+        if (dyyl === undefined || dyyl === null) {
           var optionsdata3 = {
             btn: '打印预览',
             funclick: function () {
               window.alert('点我可以打印预览')
             }
           }
-          dyyl=com.button($('#dyyl'), optionsdata3)
-        }else{
+          dyyl = com.button($('#dyyl'), optionsdata3)
+        } else {
           $('#dyyl').empty()
-          dyyl=null
+          dyyl = null
+          // dyyl=com.button.distory()
           //按钮对象销毁
         }
       }
@@ -84,7 +85,7 @@ define(['components', 'jquery'], function (com, $) {
   }
 
 
-  function showButtonDisplay(){
+  function showButtonDisplay() {
 
     var optionsdata1 = {
       btn: '打印按钮',
@@ -99,7 +100,7 @@ define(['components', 'jquery'], function (com, $) {
       btn: '↓',
       funclick: function () {
         window.alert('点我显示打印预览')
-        dyyl.setdisplay(dyyl.options.isdisplay==='none'?'block':'none')
+        dyyl.setdisplay(dyyl.options.isdisplay === 'none' ? 'block' : 'none')
         console.log(dyyl.options.isdisplay)
       }
     }
@@ -112,7 +113,7 @@ define(['components', 'jquery'], function (com, $) {
       },
       isdisplay: 'none'
     }
-    var dyyl=com.button($('#dyyl'), optionsdata3)
+    var dyyl = com.button($('#dyyl'), optionsdata3)
   }
 
   return {init}
